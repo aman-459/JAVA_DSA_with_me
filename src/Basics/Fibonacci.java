@@ -1,4 +1,4 @@
-//To calculate Fibonacci Series up to n numbers.
+package Basics;//To calculate Basics.Fibonacci Series up to n numbers.
 
 import java.util.Scanner;
 
@@ -17,4 +17,4 @@ public class Fibonacci {
     }
 }
 
-//Fibonacci Series: 0 1 1 2 3 5 8 13 21 34
+//Basics.Fibonacci Series: 0 1 1 2 3 5 8 13 21 34

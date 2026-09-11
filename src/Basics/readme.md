@@ -7,7 +7,7 @@
 <li>Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)</li>
 <li>Take 2 numbers as input and print the largest number.</li>
 <li>Input currency in rupees and output in USD.</li>
-<li>To calculate Fibonacci Series up to n numbers.</li>
-<li>To find out whether the given String is Palindrome or not.</li>
-<li>To find Armstrong Number between two given number.</li>
+<li>To calculate Basics.Fibonacci Series up to n numbers.</li>
+<li>To find out whether the given String is Basics.Palindrome or not.</li>
+<li>To find Basics.Armstrong Number between two given number.</li>
 </ul>

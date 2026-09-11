@@ -1,3 +1,5 @@
+package Basics;
+
 import java.util.Scanner;
 
 //Take 2 numbers as input and print the largest number.

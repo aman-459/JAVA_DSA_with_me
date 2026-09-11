@@ -1,4 +1,4 @@
-//To find out whether the given String is Palindrome or not.
+package Basics;//To find out whether the given String is Basics.Palindrome or not.
 
 import java.util.Scanner;
 

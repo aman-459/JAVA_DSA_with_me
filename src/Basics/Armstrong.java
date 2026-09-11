@@ -1,4 +1,4 @@
-//To find Armstrong Number between two given number.
+package Basics;//To find Basics.Armstrong Number between two given number.
 
 import java.util.Scanner;
 
