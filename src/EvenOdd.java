@@ -1,4 +1,13 @@
-package PACKAGE_NAME;
+import java.util.Scanner;
+// Write a program to print whether a number is even or odd, also take input from the user.
 
 public class EvenOdd {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        System.out.print("Enter a Number: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n%2 == 0) System.out.println(n+" is Even Number.");
+        else System.out.println(n+" is Odd Number.");
+    }
 }
