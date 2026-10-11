@@ -73,6 +73,24 @@ class DoublyLinkedList {
         size++;
     }
 
+    void insertIdx(int val, int idx) {
+        if(idx < 1 || idx > size) {
+            System.out.println("Invalid Index!");
+            return;
+        } else if(idx == 1) insertFirst(val);
+        else if(idx == size) insertLast(val);
+        else {
+            Node newNode = new Node(val);
+            Node temp = head;
+            for(int i = 1; i < idx-1; i++) temp = temp.next;
+            newNode.next = temp.next;
+            newNode.prev = temp;
+            temp.next.prev = newNode;
+            temp.next = newNode;
+            size++;
+        }
+    }
+
     void deleteFirst() {
         if(head == null) {
             System.out.println("List empty!");
@@ -100,6 +118,27 @@ class DoublyLinkedList {
         }
         size--;
     }
+
+    void deleteIdx(int idx) {
+        if(idx < 1 || idx > size) {
+            System.out.println("Invalid index");
+            return;
+        }
+        if(idx == 1) deleteFirst();
+        else if(idx == size) deleteLast();
+        else {
+            Node temp = head;
+            for(int i = 1; i < idx-1; i++) temp = temp.next;
+            Node toDelete = temp.next;
+            temp.next = toDelete.next;
+            if(toDelete.next != null) {
+                toDelete.next.prev = temp;
+            } else {
+                tail = temp;
+            }
+            size--;
+        }
+    }
 }
 
 
@@ -107,22 +146,57 @@ public class Dll {
     public static void main(String[] args) {
         System.out.println("Hello DoublyLinkedList");
         DoublyLinkedList dll = new DoublyLinkedList();
+
+        // Insert at beginning
         dll.insertFirst(10);
         dll.insertFirst(20);
-        dll.insertFirst(30);
-        dll.insertFirst(40);
-       dll.insertFirst(50);
-       dll.insertLast(60);
-       dll.insertLast(70);
-       dll.display();
+        dll.display();       // 20 10
+        dll.revDisplay();    // 10 20
+
+        // Insert at end
+        dll.insertLast(30);
+        dll.insertLast(40);
+        dll.display();       // 20 10 30 40
+
+        // Insert at index
+        dll.insertIdx(100, 3);
+        dll.display();       // 20 10 100 30 40
+
+        // Delete first
+        dll.deleteFirst();
+        dll.display();       // 10 100 30 40
+
+        // Delete last
+        dll.deleteLast();
+        dll.display();       // 10 100 30
+
+        // Delete at index
+        dll.deleteIdx(2);
+        dll.display();    // 10 30
+        dll.revDisplay();
+
+        // Size check
+        dll.printSize();     // Size: 2
+
+//        dll.insertLast(10);
+//        dll.insertLast(20);
+//        dll.insertLast(30);
+//        dll.insertLast(40);
+//       dll.insertLast(50);
+//       dll.insertLast(60);
+//       dll.insertLast(70);
+//       dll.display();
+////        dll.revDisplay();
+////        dll.printSize();
+////        dll.deleteFirst();
+////        dll.deleteFirst();
+//        dll.insertIdx(100, 5);
+//        dll.display();
 //        dll.revDisplay();
-//        dll.printSize();
-//        dll.deleteFirst();
-//        dll.deleteFirst();
-        dll.display();
-        dll.deleteLast();
-        dll.deleteLast();
-        dll.display();
+//        dll.deleteIdx(5);
+//        dll.insertIdx(90, -7);
+//        dll.display();
+//        //dll.revDisplay();
 
     }
 }
